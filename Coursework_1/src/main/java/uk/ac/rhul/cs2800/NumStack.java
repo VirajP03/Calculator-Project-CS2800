@@ -27,4 +27,14 @@ public class NumStack {
     Entry numEntry = new Entry(f);
     numStack.push(numEntry);
   }
+  
+  /**
+   * This method is used to remove the element at the top of the stack and return it
+   *
+   * @throws EmptyStackException is thrown if the stack is empty.
+   */
+  public Entry pop() throws EmptyStackException {
+    Entry number = numStack.pop();
+    return number;
+  }
 }

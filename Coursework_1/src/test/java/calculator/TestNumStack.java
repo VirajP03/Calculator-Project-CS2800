@@ -27,5 +27,10 @@ class TestNumStack {
   void testPush() {
     numberStack.push(7.0f);
   }
-
+  
+  @Test
+  void testPop() {
+    numberStack.push(7.0f);
+    numberStack.pop();
+  }
 }
