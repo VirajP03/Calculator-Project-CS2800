@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.EmptyStackException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import uk.ac.rhul.cs2800.BadTypeException;
 import uk.ac.rhul.cs2800.NumStack;
 
 class TestNumStack {
@@ -29,8 +30,8 @@ class TestNumStack {
   }
   
   @Test
-  void testPop() {
+  void testPop() throws EmptyStackException, BadTypeException {
     numberStack.push(7.0f);
-    numberStack.pop();
+    assertEquals(numberStack.pop(), 7.0f);
   }
 }

@@ -27,14 +27,15 @@ public class NumStack {
     Entry numEntry = new Entry(f);
     numStack.push(numEntry);
   }
-  
+
   /**
    * This method is used to remove the element at the top of the stack and return it
    *
    * @throws EmptyStackException is thrown if the stack is empty.
+   * @throws BadTypeException is thrown if the value isn't a float.
    */
-  public Entry pop() throws EmptyStackException {
+  public float pop() throws EmptyStackException, BadTypeException {
     Entry number = numStack.pop();
-    return number;
+    return number.getValue();
   }
 }
