@@ -34,8 +34,6 @@ public class NumStack {
    * @throws EmptyStackException is thrown if the stack is empty.
    * @throws BadTypeException is thrown if the value isn't a float.
    */
-  public float pop() throws EmptyStackException, BadTypeException {
-    Entry number = numStack.pop();
-    return number.getValue();
-  }
+  
+  
 }
