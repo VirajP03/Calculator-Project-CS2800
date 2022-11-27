@@ -42,4 +42,9 @@ class TestNumStack {
     numberStack.push(7.0f);
     assertEquals(numberStack.pop(), 7.0f);
   }
+  
+  @Test
+  void testIsEmpty() {
+    assertEquals(numberStack.isEmpty(), true);
+  }
 }

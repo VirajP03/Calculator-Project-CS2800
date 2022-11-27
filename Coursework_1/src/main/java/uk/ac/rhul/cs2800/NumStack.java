@@ -37,6 +37,11 @@ public class NumStack {
   public Float pop() throws BadTypeException {
     return numStack.pop().getValue();
   }
+
+  public boolean isEmpty() {
+    // TODO Auto-generated method stub
+    return true;
+  }
   
   
 }
