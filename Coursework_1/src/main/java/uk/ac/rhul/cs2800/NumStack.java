@@ -1,9 +1,11 @@
 package uk.ac.rhul.cs2800;
 
-import java.util.EmptyStackException;
-
 /**
- * @author virajpatel
+ * This class contains the operations used to maintain a stack specifically for float values,
+ * abstracting the implementation of Entry. The methods within allow you to add and remove a float,
+ * check the top value of the stack and check if the stack is empty.
+ *
+ * @author Viraj Patel (zkac174)
  *
  */
 public class NumStack {
@@ -47,9 +49,9 @@ public class NumStack {
     return numStack.size() == 0;
   }
 
-  
+
   /**
-   * This method returns the value at the top of numStack without removing it. 
+   * This method returns the value at the top of numStack without removing it.
    *
    * @return The float value at the top of the stack.
    * @throws BadTypeException if the value returned is not a float.
