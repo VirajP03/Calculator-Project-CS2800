@@ -55,10 +55,17 @@ class TestNumStack {
   }
   
   @Test
-  void testTop() {
+  void testTop() throws BadTypeException {
     numberStack.push(7.0f);
     assertEquals(numberStack.top(), 7.0f);
     assertEquals(numberStack.isEmpty(), false);
+  }
+  
+  @Test
+  void testTopMultipleItems() throws BadTypeException {
+    numberStack.push(6.0f);
+    numberStack.push(2.0f);
+    assertEquals(numberStack.top(), 2.0f);
   }
   
   
