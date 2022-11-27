@@ -28,8 +28,14 @@ public class NumStack {
     numStack.push(numEntry);
   }
 
-  public Float pop() {
-    return 6.0f;
+  /**
+   * This method is used to remove the float at the top of a numStack object and return it.
+   *
+   * @return The float value from the top of the numStack.
+   * @throws BadTypeException if the value return is a non-float.
+   */
+  public Float pop() throws BadTypeException {
+    return numStack.pop().getValue();
   }
   
   

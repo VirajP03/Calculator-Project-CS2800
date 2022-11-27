@@ -30,8 +30,16 @@ class TestNumStack {
   }
   
   @Test
-  void testPop() {
+  void testPop() throws BadTypeException {
     numberStack.push(6.0f);
     assertEquals(numberStack.pop(), 6.0f);
+  }
+  
+  @Test
+  void testMultiplePop() throws BadTypeException {
+    numberStack.push(6.0f);
+    assertEquals(numberStack.pop(), 6.0f);
+    numberStack.push(7.0f);
+    assertEquals(numberStack.pop(), 7.0f);
   }
 }
