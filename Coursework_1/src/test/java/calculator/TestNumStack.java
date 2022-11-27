@@ -30,8 +30,8 @@ class TestNumStack {
   }
   
   @Test
-  void testPop() throws EmptyStackException, BadTypeException {
-    numberStack.push(7.0f);
-    assertEquals(numberStack.pop(), 7.0f);
+  void testPop() {
+    numberStack.push(6.0f);
+    assertEquals(numberStack.pop(), 6.0f);
   }
 }

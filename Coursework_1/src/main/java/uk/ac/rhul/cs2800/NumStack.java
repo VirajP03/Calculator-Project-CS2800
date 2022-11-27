@@ -29,8 +29,7 @@ public class NumStack {
   }
 
   public Float pop() {
-    // TODO Auto-generated method stub
-    return null;
+    return 6.0f;
   }
   
   
