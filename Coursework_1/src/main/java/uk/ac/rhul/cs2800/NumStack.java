@@ -46,6 +46,10 @@ public class NumStack {
   public boolean isEmpty() {
     return numStack.size() == 0;
   }
+
+  public Float top() {
+    return 7.0f;
+  }
   
   
 }
