@@ -38,9 +38,13 @@ public class NumStack {
     return numStack.pop().getValue();
   }
 
+  /**
+   * This method checks if the stack contains any elements.
+   *
+   * @return true or false if the size is or isn't equal to 0 respectively.
+   */
   public boolean isEmpty() {
-    // TODO Auto-generated method stub
-    return true;
+    return numStack.size() == 0;
   }
   
   

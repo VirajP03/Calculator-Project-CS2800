@@ -47,4 +47,11 @@ class TestNumStack {
   void testIsEmpty() {
     assertEquals(numberStack.isEmpty(), true);
   }
+  
+  @Test
+  void testIsEmptyFalse() {
+    numberStack.push(9.0f);
+    assertEquals(numberStack.isEmpty(), false);
+    
+  }
 }
