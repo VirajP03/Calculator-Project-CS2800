@@ -31,5 +31,13 @@ class TestOpStack {
     operatorStack.push(Symbol.MINUS);
     assertEquals(operatorStack.pop(), Symbol.MINUS); 
   }
+  
+  @Test
+  void testPopMultipleFromOpStack() throws BadTypeException {
+    operatorStack.push(Symbol.TIMES);
+    operatorStack.push(Symbol.DIVIDE);
+    assertEquals(operatorStack.pop(), Symbol.DIVIDE);
+    assertEquals(operatorStack.size(), 1);
+  }
 
 }

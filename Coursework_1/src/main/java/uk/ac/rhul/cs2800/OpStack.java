@@ -32,7 +32,22 @@ public class OpStack {
     opStack.push(opEntry);
   }
 
+  /**
+   * This method is used to remove the symbol at the top of the opStack object and return it.
+   *
+   * @return The Symbol from the top of the opStack.
+   * @throws BadTypeException if the value returned is not of type Symbol.
+   */
   public Symbol pop() throws BadTypeException {
-    return Symbol.MINUS;
+    return opStack.pop().getSymbol();
+  }
+
+  /**
+   * This method returns the size of the stack.
+   *
+   * @return the size of the stack as a integer.
+   */
+  public int size() {
+    return opStack.size();
   }
 }
