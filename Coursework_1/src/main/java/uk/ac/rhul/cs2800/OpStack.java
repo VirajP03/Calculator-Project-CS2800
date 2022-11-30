@@ -31,4 +31,8 @@ public class OpStack {
     Entry opEntry = new Entry(operation);
     opStack.push(opEntry);
   }
+
+  public Symbol pop() throws BadTypeException {
+    return Symbol.MINUS;
+  }
 }

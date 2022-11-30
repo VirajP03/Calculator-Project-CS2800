@@ -1,7 +1,9 @@
 package calculator;
 
+import static org.junit.Assert.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import uk.ac.rhul.cs2800.BadTypeException;
 import uk.ac.rhul.cs2800.OpStack;
 import uk.ac.rhul.cs2800.Symbol;
 
@@ -22,6 +24,12 @@ class TestOpStack {
   @Test
   void testPushToOpStack() {
     operatorStack.push(Symbol.PLUS);
+  }
+  
+  @Test
+  void testPopFromOpStack() throws BadTypeException {
+    operatorStack.push(Symbol.MINUS);
+    assertEquals(operatorStack.pop(), Symbol.MINUS); 
   }
 
 }
