@@ -1,6 +1,7 @@
 package calculator;
 
 import static org.junit.Assert.assertEquals;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uk.ac.rhul.cs2800.BadTypeException;
@@ -39,5 +40,13 @@ class TestOpStack {
     assertEquals(operatorStack.pop(), Symbol.DIVIDE);
     assertEquals(operatorStack.size(), 1);
   }
+  
+  @Test
+  void testTopfromOpStack() {
+    operatorStack.push(Symbol.DIVIDE);
+    assertEquals(operatorStack.top(), Symbol.DIVIDE);
+    assertEquals(operatorStack.size(), 1);
+  }
+  
 
 }

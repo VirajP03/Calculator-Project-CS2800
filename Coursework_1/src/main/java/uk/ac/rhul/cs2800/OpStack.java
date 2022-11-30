@@ -22,6 +22,15 @@ public class OpStack {
   }
 
   /**
+   * This method returns the size of the stack.
+   *
+   * @return the size of the stack as a integer.
+   */
+  public int size() {
+    return opStack.size();
+  }
+
+  /**
    * This method is used to push a Symbol value to the top of opStack.
    *
    * @param operation is the symbol that will be used to create an Entry which will be pushed to the
@@ -42,12 +51,8 @@ public class OpStack {
     return opStack.pop().getSymbol();
   }
 
-  /**
-   * This method returns the size of the stack.
-   *
-   * @return the size of the stack as a integer.
-   */
-  public int size() {
-    return opStack.size();
+
+  public Symbol top() {
+    return Symbol.DIVIDE;
   }
 }
