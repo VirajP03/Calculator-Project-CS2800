@@ -42,11 +42,18 @@ class TestOpStack {
   }
   
   @Test
-  void testTopfromOpStack() {
+  void testTopfromOpStack() throws BadTypeException {
     operatorStack.push(Symbol.DIVIDE);
     assertEquals(operatorStack.top(), Symbol.DIVIDE);
     assertEquals(operatorStack.size(), 1);
   }
   
+  @Test
+  void testTopMultipleFromOpStack() throws BadTypeException {
+    operatorStack.push(Symbol.TIMES);
+    operatorStack.push(Symbol.PLUS);
+    assertEquals(operatorStack.top(), Symbol.PLUS);
+    assertEquals(operatorStack.size(), 2);
+  }
 
 }

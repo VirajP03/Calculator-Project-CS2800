@@ -51,8 +51,13 @@ public class OpStack {
     return opStack.pop().getSymbol();
   }
 
-
-  public Symbol top() {
-    return Symbol.DIVIDE;
+  /**
+   * This method returns the value at the top of numStack without removing it.
+   *
+   * @return The float value at the top of the stack.
+   * @throws BadTypeException if the value returned is not a float.
+   */
+  public Symbol top() throws BadTypeException {
+    return opStack.top().getSymbol();
   }
 }
