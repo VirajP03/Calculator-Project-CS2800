@@ -60,4 +60,8 @@ public class OpStack {
   public Symbol top() throws BadTypeException {
     return opStack.top().getSymbol();
   }
+
+  public boolean isEmpty() {
+    return true;
+  }
 }

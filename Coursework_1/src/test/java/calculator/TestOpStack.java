@@ -1,6 +1,6 @@
 package calculator;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -54,6 +54,11 @@ class TestOpStack {
     operatorStack.push(Symbol.PLUS);
     assertEquals(operatorStack.top(), Symbol.PLUS);
     assertEquals(operatorStack.size(), 2);
+  }
+  
+  @Test
+  void testIsEmpty() {
+    assertEquals(operatorStack.isEmpty(), true);
   }
 
 }
