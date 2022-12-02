@@ -1,7 +1,6 @@
 package calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uk.ac.rhul.cs2800.BadTypeException;
@@ -59,6 +58,12 @@ class TestOpStack {
   @Test
   void testIsEmpty() {
     assertEquals(operatorStack.isEmpty(), true);
+  }
+  
+  @Test
+  void testIsEmptyFalse() {
+    operatorStack.push(Symbol.LEFT_BRACKET);
+    assertEquals(operatorStack.isEmpty(), false); 
   }
 
 }

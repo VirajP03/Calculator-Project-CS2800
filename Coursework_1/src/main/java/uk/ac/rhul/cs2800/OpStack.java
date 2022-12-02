@@ -52,16 +52,21 @@ public class OpStack {
   }
 
   /**
-   * This method returns the value at the top of numStack without removing it.
+   * This method returns the value at the top of opStack without removing it.
    *
-   * @return The float value at the top of the stack.
-   * @throws BadTypeException if the value returned is not a float.
+   * @return The symbol at the top of the stack.
+   * @throws BadTypeException if the value returned is not a symbol.
    */
   public Symbol top() throws BadTypeException {
     return opStack.top().getSymbol();
   }
 
+  /**
+   * This method checks if the opStack contains any elements.
+   *
+   * @return true or false if the size is or isn't equal to 0 respectively.
+   */
   public boolean isEmpty() {
-    return true;
+    return opStack.size() == 0;
   }
 }
