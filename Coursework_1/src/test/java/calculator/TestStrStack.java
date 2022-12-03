@@ -25,5 +25,11 @@ class TestStrStack {
     stringStack.push("Test1");
     assertEquals(stringStack.size(), 1);
   }
+  
+  @Test
+  void testPopFromStrStack() {
+    stringStack.push("Test2");
+    assertEquals(stringStack.pop(), "Test2");
+  }
  
 }

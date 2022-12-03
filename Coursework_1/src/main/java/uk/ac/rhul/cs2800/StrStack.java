@@ -40,4 +40,8 @@ public class StrStack {
     return strStack.size();
   }
 
+  public String pop() {
+    return "Test2";
+  }
+
 }
