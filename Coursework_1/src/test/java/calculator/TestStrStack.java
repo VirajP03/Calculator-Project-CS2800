@@ -35,11 +35,17 @@ class TestStrStack {
   }
   
   @Test
-  void testPopMultipleFromOpStack() throws BadTypeException {
+  void testPopMultipleFromStrStack() throws BadTypeException {
     stringStack.push("Test3");
     stringStack.push("Test3.2");
     assertEquals(stringStack.pop(), "Test3.2");
     assertEquals(stringStack.size(), 1);
   }
- 
+  
+  @Test
+  void testTopfromStrStack() {
+    stringStack.push("Test4");
+    assertEquals(stringStack.top(), "Test4");
+    assertEquals(stringStack.size(), 1);
+  }
 }

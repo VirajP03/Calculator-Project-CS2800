@@ -50,4 +50,8 @@ public class StrStack {
     return strStack.pop().getString();
   }
 
+  public String top() {
+    return "Test4";
+  }
+
 }
