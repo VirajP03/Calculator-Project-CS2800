@@ -40,8 +40,14 @@ public class StrStack {
     return strStack.size();
   }
 
-  public String pop() {
-    return "Test2";
+  /**
+   *  This method is used to remove the String at the top of the strStack object and return it.
+   *
+   * @return The string at the top of the stack.
+   * @throws BadTypeException if the value returned is not a symbol.
+   */
+  public String pop() throws BadTypeException {
+    return strStack.pop().getString();
   }
 
 }
