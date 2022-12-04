@@ -56,4 +56,9 @@ class TestStrStack {
     assertEquals(stringStack.top(), "Test5.2");
     assertEquals(stringStack.size(), 2);
   }
+  
+  @Test
+  void testIsEmpty() {
+    assertEquals(stringStack.isEmpty(), true);
+  }
 }

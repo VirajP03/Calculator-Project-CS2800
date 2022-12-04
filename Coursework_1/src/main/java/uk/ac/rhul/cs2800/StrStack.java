@@ -60,4 +60,8 @@ public class StrStack {
     return strStack.top().getString();
   }
 
+  public Boolean isEmpty() { 
+    return true;
+  }
+
 }
