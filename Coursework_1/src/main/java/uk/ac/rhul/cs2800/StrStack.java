@@ -66,7 +66,7 @@ public class StrStack {
    * @return true or false if the size is or isn't equal to 0 respectively.
    */
   public Boolean isEmpty() {
-    return (strStack.size() == 0);
+    return strStack.size() == 0;
   }
 
 }
