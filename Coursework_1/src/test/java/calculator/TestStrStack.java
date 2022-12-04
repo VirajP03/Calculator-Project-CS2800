@@ -61,4 +61,10 @@ class TestStrStack {
   void testIsEmpty() {
     assertEquals(stringStack.isEmpty(), true);
   }
+  
+  @Test
+  void testIsEmptyFalse() {
+    stringStack.push("Test6");
+    assertEquals(stringStack.isEmpty(), false); 
+  }
 }
