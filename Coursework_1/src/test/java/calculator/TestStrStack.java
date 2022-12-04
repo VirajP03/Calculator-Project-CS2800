@@ -43,9 +43,17 @@ class TestStrStack {
   }
   
   @Test
-  void testTopfromStrStack() {
+  void testTopfromStrStack() throws BadTypeException {
     stringStack.push("Test4");
     assertEquals(stringStack.top(), "Test4");
     assertEquals(stringStack.size(), 1);
+  }
+  
+  @Test
+  void testTopMultipleFromStrStack() throws BadTypeException {
+    stringStack.push("Test5");
+    stringStack.push("Test5.2");
+    assertEquals(stringStack.top(), "Test5.2");
+    assertEquals(stringStack.size(), 2);
   }
 }

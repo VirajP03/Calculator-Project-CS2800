@@ -50,8 +50,14 @@ public class StrStack {
     return strStack.pop().getString();
   }
 
-  public String top() {
-    return "Test4";
+  /**
+   * This method returns the value at the top of strStack without removing it.
+   *
+   * @return The string at the top of the stack.
+   * @throws BadTypeException if the value returned is not a string.
+   */
+  public String top() throws BadTypeException {
+    return strStack.top().getString();
   }
 
 }
