@@ -41,7 +41,7 @@ public class StrStack {
   }
 
   /**
-   * This method is used to remove the String at the top of the strStack object and return it.
+   *  This method is used to remove the String at the top of the strStack object and return it.
    *
    * @return The string at the top of the stack.
    * @throws BadTypeException if the value returned is not a symbol.
@@ -60,13 +60,8 @@ public class StrStack {
     return strStack.top().getString();
   }
 
-  /**
-   * This method checks if the strStack contains any elements by checking the size of the stack. 
-   *
-   * @return true or false if the size is or isn't equal to 0 respectively.
-   */
-  public Boolean isEmpty() {
-    return (strStack.size() == 0);
+  public Boolean isEmpty() { 
+    return true;
   }
 
 }
