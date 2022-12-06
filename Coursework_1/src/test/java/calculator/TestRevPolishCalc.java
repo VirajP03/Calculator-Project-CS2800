@@ -51,5 +51,10 @@ class TestRevPolishCalc {
   void testEvaluateMultiplication() throws InvalidExpressionException, BadTypeException {
     assertEquals(rc.evaluate("2 3 *"), 6.0f);
   }
+  
+  @Test
+  void testEvaluateMultiplicationSecond() throws InvalidExpressionException, BadTypeException {
+    assertEquals(rc.evaluate("9 9 *"), 81.0f);
+  }
 
 }

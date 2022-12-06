@@ -54,7 +54,7 @@ public class RevPolishCalc implements Calculator {
           Float val1 = values.pop();
           Float val2 = values.pop();
           if (current.equals("*")) {
-            values.push(3.0f * 2.0f);
+            values.push(val2 * val1);
           } else if (current.equals("+")) {
             values.push(val2 + val1);
           }
