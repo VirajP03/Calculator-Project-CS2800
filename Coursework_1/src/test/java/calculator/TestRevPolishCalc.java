@@ -12,39 +12,44 @@ import uk.ac.rhul.cs2800.RevPolishCalc;
 class TestRevPolishCalc {
 
   RevPolishCalc rc;
-  
+
   @BeforeEach
   void setup() {
-    rc = new RevPolishCalc(); 
+    rc = new RevPolishCalc();
   }
-  
+
   @Test
   void test() {
     RevPolishCalc revCalc = new RevPolishCalc();
   }
-  
+
   @Test
   void testEvaluate() throws InvalidExpressionException, BadTypeException {
     assertEquals(rc.evaluate("3 4 +"), 7.0f);
   }
-  
+
   @Test
   void testEvaluateOnEmpty() {
     assertThrows(InvalidExpressionException.class, () -> {
       rc.evaluate("");
     }, "InvalidExpressionException should be thrown");
   }
-  
+
   @Test
   void testEvaluateStringWithLetter() {
     assertThrows(InvalidExpressionException.class, () -> {
       rc.evaluate("1 a");
     }, "InvalidExpressionException should be thrown");
   }
-  
+
   @Test
   void testEvaluateSimpleExpression() throws InvalidExpressionException, BadTypeException {
     assertEquals(rc.evaluate("1 1 +"), 2.0f);
   }
-  
+
+  @Test
+  void testEvaluateMultiplication() throws InvalidExpressionException, BadTypeException {
+    assertEquals(rc.evaluate("2 3 *"), 6.0f);
+  }
+
 }

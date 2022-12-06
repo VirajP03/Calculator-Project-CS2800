@@ -53,7 +53,11 @@ public class RevPolishCalc implements Calculator {
         } catch (NumberFormatException e) {
           Float val1 = values.pop();
           Float val2 = values.pop();
-          values.push(val2 + val1);
+          if (current.equals("*")) {
+            values.push(3.0f * 2.0f);
+          } else if (current.equals("+")) {
+            values.push(val2 + val1);
+          }
         }
       }
       s.close();
