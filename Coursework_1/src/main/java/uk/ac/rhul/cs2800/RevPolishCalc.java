@@ -57,6 +57,8 @@ public class RevPolishCalc implements Calculator {
             values.push(val2 * val1);
           } else if (current.equals("+")) {
             values.push(val2 + val1);
+          } else if (current.equals("/")) {
+            values.push(val2 / val1);
           }
         }
       }
