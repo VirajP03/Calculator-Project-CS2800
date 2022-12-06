@@ -8,6 +8,6 @@ package uk.ac.rhul.cs2800;
  */
 public interface Calculator {
   
-  Float evaluate(String string) throws InvalidExpressionException;
+  Float evaluate(String string) throws InvalidExpressionException, BadTypeException;
   
 }
