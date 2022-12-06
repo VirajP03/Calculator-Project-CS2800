@@ -61,5 +61,10 @@ class TestRevPolishCalc {
   void testEvaluateDivision() throws InvalidExpressionException, BadTypeException {
     assertEquals(rc.evaluate("4 2 /"), 2.0f);
   }
+  
+  @Test
+  void testEvaluateSubtraction() throws InvalidExpressionException, BadTypeException {
+    assertEquals(rc.evaluate("30 36 -"), -6.0f);
+  }
 
 }

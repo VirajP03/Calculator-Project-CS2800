@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 /**
  * This class will implement the Reverse polish calculator and perform operations on that were
- * passed to it and then return the answer.
+ * passed to it and then return the answer. It will use a NumStack object and will push and pop from
+ * it to perform the calculations and return the solution to the expression entered.
  *
  * @author Viraj Patel (zkac174)
  *
@@ -59,6 +60,8 @@ public class RevPolishCalc implements Calculator {
             values.push(val2 + val1);
           } else if (current.equals("/")) {
             values.push(val2 / val1);
+          } else if (current.equals("-")) {
+            values.push(val2 - val1);
           }
         }
       }
