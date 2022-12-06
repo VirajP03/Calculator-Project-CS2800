@@ -10,7 +10,14 @@ import java.util.Scanner;
  *
  */
 public class RevPolishCalc implements Calculator {
-  
+
+  private NumStack values;
+
+
+  public RevPolishCalc() {
+    values = new NumStack();
+  }
+
   /**
    * This method is used to check if the expression contains any letters and will return true.
    *
@@ -30,14 +37,28 @@ public class RevPolishCalc implements Calculator {
    * @param string The expression that will be evaluated.
    * @return The answer to the evaluation of the string entered.
    * @throws InvalidExpressionException if the string is empty.
+   * @throws BadTypeException if the value popped from the stack isn't a float.
    */
   @Override
-  public Float evaluate(String string) throws InvalidExpressionException {
+  public Float evaluate(String string) throws InvalidExpressionException, BadTypeException {
     if ((string == "") || (testForLetter(string))) { // Results in a string with numbers and symbols
       throw new InvalidExpressionException();
     } else {
-      return 7.0f;
+      Scanner s = new Scanner(string);
+      while (s.hasNext()) {
+        String current = s.next();
+        try {
+          Float currentFloat = Float.parseFloat(current);
+          values.push(currentFloat);
+        } catch (NumberFormatException e) {
+          Float val1 = values.pop();
+          Float val2 = values.pop();
+          values.push(val2 + val1);
+        }
+      }
+      s.close();
     }
+    return values.pop();
   }
 
 }

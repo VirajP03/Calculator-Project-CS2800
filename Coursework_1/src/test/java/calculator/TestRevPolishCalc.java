@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.EmptyStackException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import uk.ac.rhul.cs2800.BadTypeException;
 import uk.ac.rhul.cs2800.InvalidExpressionException;
 import uk.ac.rhul.cs2800.RevPolishCalc;
 
@@ -23,7 +24,7 @@ class TestRevPolishCalc {
   }
   
   @Test
-  void testEvaluate() throws InvalidExpressionException {
+  void testEvaluate() throws InvalidExpressionException, BadTypeException {
     assertEquals(rc.evaluate("3 4 +"), 7.0f);
   }
   
@@ -41,5 +42,9 @@ class TestRevPolishCalc {
     }, "InvalidExpressionException should be thrown");
   }
   
-
+  @Test
+  void testEvaluateSimpleExpression() throws InvalidExpressionException, BadTypeException {
+    assertEquals(rc.evaluate("1 1 +"), 2.0f);
+  }
+  
 }
