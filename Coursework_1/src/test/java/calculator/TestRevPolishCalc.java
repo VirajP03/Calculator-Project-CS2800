@@ -38,7 +38,7 @@ class TestRevPolishCalc {
   @Test
   void testEvaluateStringWithLetter() {
     assertThrows(InvalidExpressionException.class, () -> {
-      rc.evaluate("1 a");
+      rc.evaluate("1 a *");
     }, "InvalidExpressionException should be thrown");
   }
 
@@ -66,5 +66,9 @@ class TestRevPolishCalc {
   void testEvaluateSubtraction() throws InvalidExpressionException, BadTypeException {
     assertEquals(rc.evaluate("30 36 -"), -6.0f);
   }
-
+  
+  @Test
+  void testComplicated() throws InvalidExpressionException, BadTypeException {
+    assertEquals(rc.evaluate("5 6 7 + * 2 -"), 63.0f);
+  }
 }

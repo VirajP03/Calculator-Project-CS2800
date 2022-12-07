@@ -54,14 +54,26 @@ public class RevPolishCalc implements Calculator {
         } catch (NumberFormatException e) {
           Float val1 = values.pop();
           Float val2 = values.pop();
-          if (current.equals("*")) {
-            values.push(val2 * val1);
-          } else if (current.equals("+")) {
-            values.push(val2 + val1);
-          } else if (current.equals("/")) {
-            values.push(val2 / val1);
-          } else if (current.equals("-")) {
-            values.push(val2 - val1);
+          switch (current) {
+
+            case ("*"):
+              values.push(val2 * val1);
+              break;
+
+            case ("+"):
+              values.push(val2 + val1);
+              break;
+
+            case ("/"):
+              values.push(val2 / val1);
+              break;
+
+            case ("-"):
+              values.push(val2 - val1);
+              break;
+
+            default:
+              throw new InvalidExpressionException();
           }
         }
       }
