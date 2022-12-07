@@ -79,5 +79,10 @@ class TestRevPolishCalc {
     }, "InvalidExpressionException should be thrown");
   }
   
+  @Test
+  void testMoreComplex() throws InvalidExpressionException, BadTypeException {
+    assertEquals(rc.evaluate("5 6 7 + * 2 /"), 32.5f);
+  }
+  
   
 }
