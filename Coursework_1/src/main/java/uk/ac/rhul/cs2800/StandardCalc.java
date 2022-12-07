@@ -7,6 +7,10 @@ package uk.ac.rhul.cs2800;
  * @author Viraj Patel (zkac174)
  *
  */
-public class StandardCalc {
+public class StandardCalc implements Calculator {
 
+  @Override
+  public Float evaluate(String string) throws InvalidExpressionException, BadTypeException {
+    return 0.0f;
+  }
 }
