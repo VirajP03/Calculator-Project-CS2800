@@ -71,4 +71,13 @@ class TestRevPolishCalc {
   void testComplicated() throws InvalidExpressionException, BadTypeException {
     assertEquals(rc.evaluate("5 6 7 + * 2 -"), 63.0f);
   }
+  
+  @Test
+  void testEvaluateWrongOperator() {
+    assertThrows(InvalidExpressionException.class, () -> {
+      rc.evaluate("1 1 !");
+    }, "InvalidExpressionException should be thrown");
+  }
+  
+  
 }
