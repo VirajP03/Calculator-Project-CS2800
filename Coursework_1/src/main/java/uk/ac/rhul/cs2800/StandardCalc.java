@@ -31,7 +31,7 @@ public class StandardCalc implements Calculator {
       Scanner scanner = new Scanner(string);
       while (scanner.hasNext()) {
         String current = scanner.next();
-        if (current.equals("+") || current.equals("-")) {
+        if (current.equals("+") || current.equals("-") || current.equals("*")) {
           values.push(current);
         } else {
           numbers.add(current);

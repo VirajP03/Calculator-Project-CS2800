@@ -44,5 +44,10 @@ class TestStandardCalc {
   void testEvaluateSubtraction() throws InvalidExpressionException, BadTypeException {
     assertEquals(infix.evaluate("1 - 1"), 0.0f);
   }
+  
+  @Test
+  void testEvaluateMultiplication() throws InvalidExpressionException, BadTypeException {
+    assertEquals(infix.evaluate("7 * 9"), 63.0f);
+  }
     
 }
