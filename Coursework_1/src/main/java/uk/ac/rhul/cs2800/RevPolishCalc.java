@@ -35,6 +35,11 @@ public class RevPolishCalc implements Calculator {
   }
 
   /**
+   * This method calculates the expression provided, it reads through the entire string whilst
+   * placing numbers into a stack and when reading an operator it will pop the top two values from
+   * the stack of numbers and perform the correct operation. It will then do this until the whole
+   * string is read and will return the correct answer.
+   *
    * @param string The expression that will be evaluated.
    * @return The answer to the evaluation of the string entered.
    * @throws InvalidExpressionException if the string is empty.
