@@ -49,5 +49,10 @@ class TestStandardCalc {
   void testEvaluateMultiplication() throws InvalidExpressionException, BadTypeException {
     assertEquals(infix.evaluate("7 * 9"), 63.0f);
   }
+  
+  @Test
+  void testEvaluateDivison() throws InvalidExpressionException, BadTypeException {
+    assertEquals(infix.evaluate("5 / 2"), 2.5f);
+  }
     
 }
