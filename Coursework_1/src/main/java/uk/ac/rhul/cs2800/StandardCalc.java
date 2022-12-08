@@ -11,6 +11,10 @@ public class StandardCalc implements Calculator {
 
   @Override
   public Float evaluate(String string) throws InvalidExpressionException, BadTypeException {
-    return 0.0f;
+    if (string.equals("")) {
+      throw new InvalidExpressionException();
+    } else {
+      return 0.0f;
+    }
   }
 }
