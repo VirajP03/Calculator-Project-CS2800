@@ -39,4 +39,10 @@ class TestStandardCalc {
   void testEvaluateAddition() throws InvalidExpressionException, BadTypeException {
     assertEquals(infix.evaluate("1 + 1"), 2.0f);
   }
+  
+  @Test
+  void testEvaluateSubtraction() throws InvalidExpressionException, BadTypeException {
+    assertEquals(infix.evaluate("1 - 1"), 0.0f);
+  }
+    
 }

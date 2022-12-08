@@ -13,14 +13,14 @@ import java.util.Scanner;
 public class StandardCalc implements Calculator {
 
   private StrStack values;
-  private RevPolishCalc rpCalc; 
-  
-  
+  private RevPolishCalc rpCalc;
+
+
   public StandardCalc() {
     values = new StrStack();
     rpCalc = new RevPolishCalc();
   }
-  
+
   @Override
   public Float evaluate(String string) throws InvalidExpressionException, BadTypeException {
     String rpn = "";
@@ -31,7 +31,7 @@ public class StandardCalc implements Calculator {
       Scanner scanner = new Scanner(string);
       while (scanner.hasNext()) {
         String current = scanner.next();
-        if (current.equals("+")) {
+        if (current.equals("+") || current.equals("-")) {
           values.push(current);
         } else {
           numbers.add(current);
