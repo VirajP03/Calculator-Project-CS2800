@@ -11,9 +11,9 @@ import java.util.Scanner;
  * @author Viraj Patel (zkac174)
  *
  */
-public class StandardCalc implements Calculator {
+public class StandardCalc {
 
-  private StrStack values;
+  private static StrStack values;
   private RevPolishCalc rpCalc;
 
 
@@ -31,34 +31,47 @@ public class StandardCalc implements Calculator {
    * @throws InvalidExpressionException if the string is empty.
    * @throws BadTypeException if the value popped from the stack isn't a float.
    */
-  @Override
   public Float evaluate(String string) throws InvalidExpressionException, BadTypeException {
     String rpn = "";
     if (string.equals("")) {
       throw new InvalidExpressionException();
     } else {
-      ArrayList<String> numbers = new ArrayList<String>();
-      ArrayList<String> operators = new ArrayList<String>(Arrays.asList("+", "-", "*", "/"));
+      if (string.length() < 3) {
+        return Float.parseFloat(string);
+      }
+      // ArrayList<String> numbers = new ArrayList<String>();
+      ArrayList<String> operators = new ArrayList<String>(Arrays.asList("/", "*", "+", "-"));
       Scanner scanner = new Scanner(string);
       while (scanner.hasNext()) {
         String current = scanner.next();
         if (operators.contains(current)) {
-          values.push(current);
+          if (values.size() > 0) {
+            if (operators.indexOf(current) > operators.indexOf(values.top())) {
+              rpn += values.pop();
+              values.push(current);
+            } else {
+              if (values.size() == 0) {
+                rpn += current + " ";
+              } else {
+                rpn += values.pop() + " ";
+                values.push(current);
+              }
+            }
+          } else {
+            values.push(current + " ");
+          }
         } else {
-          numbers.add(current);
+          rpn += current + " ";
         }
+
       }
-      if (numbers.size() == 1) {
-        scanner.close();
-        return Float.parseFloat(string);
-      } else {
-        for (int i = 0; i < numbers.size(); i++) {
-          rpn += numbers.get(i) + " ";
-        }
-        rpn += values.pop();
+      for (int i = 0; i < values.size(); i++) {
+        rpn += values.pop() + " ";
       }
       scanner.close();
+      rpn = rpn.substring(0, (rpn.length() - 1));
+      return rpCalc.evaluate(rpn);
     }
-    return rpCalc.evaluate(rpn);
   }
+
 }
