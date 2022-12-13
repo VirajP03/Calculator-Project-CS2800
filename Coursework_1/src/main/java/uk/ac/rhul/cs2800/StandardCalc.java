@@ -39,7 +39,6 @@ public class StandardCalc {
       if (string.length() < 3) {
         return Float.parseFloat(string);
       }
-      // ArrayList<String> numbers = new ArrayList<String>();
       ArrayList<String> operators = new ArrayList<String>(Arrays.asList("/", "*", "+", "-"));
       Scanner scanner = new Scanner(string);
       while (scanner.hasNext()) {
@@ -47,8 +46,14 @@ public class StandardCalc {
         if (operators.contains(current)) {
           if (values.size() > 0) {
             if (operators.indexOf(current) > operators.indexOf(values.top())) {
-              rpn += values.pop();
-              values.push(current);
+              // add the check for brackets.
+              String temp = values.pop();
+              if (temp.equals("( ")) {
+                values.push(current);
+              } else {
+                rpn += temp;
+                values.push(current);
+              }
             } else {
               if (values.size() == 0) {
                 rpn += current + " ";
@@ -59,6 +64,17 @@ public class StandardCalc {
             }
           } else {
             values.push(current + " ");
+          }
+        } else if (current.equals("(")) {
+          values.push(current + " ");
+        } else if (current.equals(")")) {
+          while (!(current.equals("(")) && values.size() > 0) {
+            String temp = values.pop();
+            if (temp.equals(") ") || temp.equals("( ")) {
+              rpn += "";
+            } else {
+              rpn += temp + " ";
+            }
           }
         } else {
           rpn += current + " ";
@@ -73,5 +89,4 @@ public class StandardCalc {
       return rpCalc.evaluate(rpn);
     }
   }
-
 }

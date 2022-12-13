@@ -59,5 +59,10 @@ class TestStandardCalc {
   void testEvaluateMulti() throws InvalidExpressionException, BadTypeException {
     assertEquals(infix.evaluate("7 - 5 + 19"), 21.0f);
   }
+  
+  @Test
+  void testEvaluateBrackets() throws InvalidExpressionException, BadTypeException {
+    assertEquals(infix.evaluate("( 7 * 1 ) - 9"), -2.0f);
+  }
     
 }
