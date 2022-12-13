@@ -12,17 +12,17 @@ package uk.ac.rhul.cs2800;
  * @author dave
  *
  */
-public final class Calculator {
+public final class CalcController {
   /**
    * Even though there is only a default constructor it must be final so that nw instances of this
    * Singleton cannot be created.
    */
-  private Calculator() {}
+  private CalcController() {}
 
   /**
    * The (exactly) one instance of this class. Created in a lazy manner when it is required.
    */
-  private static Calculator instance = null;
+  private static CalcController instance = null;
 
   /**
    * The hook to access this Singleton Calculator. The first time it is called it does the actual
@@ -30,9 +30,9 @@ public final class Calculator {
    * 
    * @return
    */
-  public static Calculator getInstance() {
+  public static CalcController getInstance() {
     if (instance == null) {
-      instance = new Calculator();
+      instance = new CalcController();
     }
     return instance;
   }

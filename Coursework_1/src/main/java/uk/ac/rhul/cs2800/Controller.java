@@ -5,7 +5,7 @@
 package uk.ac.rhul.cs2800;
 
 public class Controller implements ControllerInterface {
-  Calculator calc = Calculator.getInstance();
+  CalcController calc = CalcController.getInstance();
   ViewInterface myView = null;
 
   private void calculateAction() {
