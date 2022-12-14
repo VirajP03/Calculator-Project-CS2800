@@ -2,6 +2,7 @@ package uk.ac.rhul.cs2800;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -36,6 +37,36 @@ public class StandardCalc {
     if (string.equals("")) {
       throw new InvalidExpressionException();
     } else {
+      String newExpression = "";
+      String[] expression = string.split(" ");
+      List<String> test = new ArrayList<String>();
+      test = Arrays.asList(expression);
+      int i;
+      for (i = 0; i < test.size() - 1; i++) {
+        String current = test.get(i);
+        if (current.length() > 1) {
+          String[] subExpression = current.split("");
+          List<String> list = Arrays.asList(subExpression);
+          List<String> sub = new ArrayList<>(list);
+          if (sub.contains("(")) {
+            int index = sub.indexOf("(");
+            sub.remove("(");
+            sub.add(index, "( ");
+          }
+          if (sub.contains(")")) {
+            int index = sub.indexOf(")");
+            sub.remove(")");
+            sub.add(index, " )");
+          }
+          for (int j = 0; j < sub.size(); j++) {
+            newExpression += sub.get(j);
+          }
+        } else {
+          newExpression += " " + current + " ";
+        }
+      }
+      newExpression += test.get(i);
+      string = newExpression;
       if (string.length() < 3) {
         return Float.parseFloat(string);
       }
@@ -47,11 +78,11 @@ public class StandardCalc {
           if (values.size() > 0) {
             if (operators.indexOf(current) > operators.indexOf(values.top())) {
               // add the check for brackets.
-              String temp = values.pop();
-              if (temp.equals("( ")) {
+              String stackValue = values.pop();
+              if (stackValue.equals("( ")) {
                 values.push(current);
               } else {
-                rpn += temp;
+                rpn += stackValue;
                 values.push(current);
               }
             } else {
@@ -69,11 +100,11 @@ public class StandardCalc {
           values.push(current + " ");
         } else if (current.equals(")")) {
           while (!(current.equals("(")) && values.size() > 0) {
-            String temp = values.pop();
-            if (temp.equals(") ") || temp.equals("( ")) {
+            String temporary = values.pop();
+            if (temporary.equals(") ") || temporary.equals("( ")) {
               rpn += "";
             } else {
-              rpn += temp + " ";
+              rpn += temporary + " ";
             }
           }
         } else {
@@ -81,7 +112,7 @@ public class StandardCalc {
         }
 
       }
-      for (int i = 0; i < values.size(); i++) {
+      for (int j = 0; j < values.size(); j++) {
         rpn += values.pop() + " ";
       }
       scanner.close();

@@ -65,4 +65,8 @@ class TestStandardCalc {
     assertEquals(infix.evaluate("( 7 * 1 ) - 9"), -2.0f);
   }
     
+  @Test
+  void testEvaluateBracketsNoSpaces() throws InvalidExpressionException, BadTypeException {
+    assertEquals(infix.evaluate("(7 * 1) - 9"), -2.0f);
+  }
 }
