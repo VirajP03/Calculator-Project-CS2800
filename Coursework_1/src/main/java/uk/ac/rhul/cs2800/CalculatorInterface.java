@@ -6,7 +6,7 @@ package uk.ac.rhul.cs2800;
  * @author Viraj Patel (zkac174)
  *
  */
-public interface Calculator {
+public interface CalculatorInterface {
   
   Float evaluate(String string) throws InvalidExpressionException, BadTypeException;
   

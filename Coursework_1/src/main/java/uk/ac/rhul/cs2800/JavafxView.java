@@ -1,4 +1,6 @@
-// File name: $HeadURL: https://svn.cs.rhul.ac.uk/personal/dave/CS2800Examples/MVC-separated/trunk/src/main/java/calculator/cs2800/JavafxView.java $
+// File name: $HeadURL:
+// https://svn.cs.rhul.ac.uk/personal/dave/CS2800Examples/MVC-separated/trunk/src/main/java/calculator/cs2800/JavafxView.java
+// $
 // Revision: $Revision: 184 $
 // Last modified: $Date: 2020-08-06 13:58:04 +0100 (Thu, 06 Aug 2020) $
 // Last modified by: $Author: dave $
@@ -6,7 +8,6 @@
 package uk.ac.rhul.cs2800;
 
 import java.util.function.Consumer;
-
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -21,14 +22,14 @@ import javafx.scene.control.ToggleGroup;
 
 /**
  * This is the JavaFX View that is filled by the fxml loader at runtime.
- * 
+ *
  * @author dave
  */
 public class JavafxView implements ViewInterface {
 
   /**
    * This allows a new observer to be added to the change calculate strategy action.
-   * 
+   *
    * @param f the Observer to be notified.
    */
   public void addCalcObserver(Observer f) {
@@ -43,7 +44,7 @@ public class JavafxView implements ViewInterface {
 
   /**
    * This allows a new observer to be added to the change calculate strategy action.
-   * 
+   *
    * @param l the Observer to be notified.
    */
   public void addTypeObserver(Consumer<OpType> l) {
@@ -57,7 +58,7 @@ public class JavafxView implements ViewInterface {
 
   /**
    * A hook to expose the question to another class.
-   * 
+   *
    * @return the arithmetic expression to be evaluated.
    */
   public String getQuestion() {
@@ -66,7 +67,7 @@ public class JavafxView implements ViewInterface {
 
   /**
    * A hook to allow the answer to be displayed.
-   * 
+   *
    * @param a the evaluated answer.
    */
   public void setAnswer(String a) {
@@ -75,7 +76,7 @@ public class JavafxView implements ViewInterface {
   ///////////////////////////////////////////////////////////////////
 
   /**
-   * The calculator button on the screen.
+   * The button the user presses once they have entered their expression.
    */
   @FXML
   // fx:id="calcButton"

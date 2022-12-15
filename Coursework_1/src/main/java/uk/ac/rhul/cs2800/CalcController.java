@@ -1,4 +1,6 @@
-// File name: $HeadURL: https://svn.cs.rhul.ac.uk/personal/dave/CS2800Examples/MVC-separated/trunk/src/main/java/calculator/cs2800/Calculator.java $
+// File name: $HeadURL:
+// https://svn.cs.rhul.ac.uk/personal/dave/CS2800Examples/MVC-separated/trunk/src/main/java/calculator/cs2800/Calculator.java
+// $
 // Revision: $Revision: 184 $
 // Last modified: $Date: 2020-08-06 13:58:04 +0100 (Thu, 06 Aug 2020) $
 // Last modified by: $Author: dave $
@@ -8,42 +10,33 @@ package uk.ac.rhul.cs2800;
 /**
  * The model for this assembly. It has hooks to evaluate an arithmetic expression, but it fakes the
  * answer. It is a classical Singleton - notice that the class itself is final.
- * 
- * @author dave
+ *
+ * @author dave and edited by Viraj Patel (zkac174)
  *
  */
 public final class CalcController {
-  /**
-   * Even though there is only a default constructor it must be final so that nw instances of this
-   * Singleton cannot be created.
-   */
-  private CalcController() {}
+
+  private RevPolishCalc rpCalc;
 
   /**
-   * The (exactly) one instance of this class. Created in a lazy manner when it is required.
+   * Even though there is only a default constructor it must be final so that new instances of this
+   * Singleton cannot be created. It then instantiates the Reverse Polish calculator.
    */
-  private static CalcController instance = null;
-
-  /**
-   * The hook to access this Singleton Calculator. The first time it is called it does the actual
-   * instantiation - this is called lazy.
-   * 
-   * @return
-   */
-  public static CalcController getInstance() {
-    if (instance == null) {
-      instance = new CalcController();
-    }
-    return instance;
+  public CalcController() {
+    rpCalc = new RevPolishCalc();
   }
 
   /**
-   * Called to actually evaluate an arithmetic expression.
-   * 
+   * This method calls the evaluate method and takes the user input as an argument and returns the
+   * solution.
+   *
    * @param text the arithmetic expression
    * @return the evaluation
+   * @throws BadTypeException if the type returned is a float.
+   * @throws InvalidExpressionException if the input entered doesn't contain numbers or has an
+   *         operator that isn't mathematical.
    */
-  public Float evaluate(String text) {
-    return 23.0f;
+  public Float evaluate(String text) throws InvalidExpressionException, BadTypeException {
+    return rpCalc.evaluate(text);
   }
 }
