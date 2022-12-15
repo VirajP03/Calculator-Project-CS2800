@@ -10,7 +10,9 @@ import java.util.Scanner;
  * @author Viraj Patel (zkac174)
  *
  */
-public class RevPolishCalc implements Calculator {
+
+public class RevPolishCalc implements CalculatorInterface {
+
 
   private NumStack values;
 
