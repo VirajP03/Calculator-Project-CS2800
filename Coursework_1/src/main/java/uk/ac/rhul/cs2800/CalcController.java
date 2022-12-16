@@ -17,6 +17,8 @@ package uk.ac.rhul.cs2800;
 public final class CalcController {
 
   private RevPolishCalc rpCalc;
+  private StandardCalc sCalc;
+  public boolean isInfix;
 
   /**
    * Even though there is only a default constructor it must be final so that new instances of this
@@ -24,6 +26,17 @@ public final class CalcController {
    */
   public CalcController() {
     rpCalc = new RevPolishCalc();
+    sCalc = new StandardCalc();
+  }
+
+  /**
+   * This method is used to set to determine which mode the user has selected and sets isInfix to
+   * true or false.
+   *
+   * @param value if the mode is either infix or not, true or false respectively.
+   */
+  public void setIsInfix(boolean value) {
+    isInfix = value;
   }
 
   /**
@@ -37,6 +50,10 @@ public final class CalcController {
    *         operator that isn't mathematical.
    */
   public Float evaluate(String text) throws InvalidExpressionException, BadTypeException {
-    return rpCalc.evaluate(text);
+    if (isInfix) {
+      return rpCalc.evaluate(text);
+    } else {
+      return sCalc.evaluate(text);
+    }
   }
 }

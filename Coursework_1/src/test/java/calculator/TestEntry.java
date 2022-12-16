@@ -7,7 +7,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uk.ac.rhul.cs2800.BadTypeException;
 import uk.ac.rhul.cs2800.Entry;
-import uk.ac.rhul.cs2800.Symbol;
 import uk.ac.rhul.cs2800.Type;
 
 /**
@@ -26,7 +25,6 @@ class TestEntry {
   // Sets "number"/"myString"/"symbol" depending on argument and sets "type" accordingly
   void start() {
     entry1 = new Entry(6.0f);
-    entry2 = new Entry(Symbol.TIMES);
     entry3 = new Entry("hello");
   }
 
@@ -71,21 +69,6 @@ class TestEntry {
   }
 
   @Test
-  // Test 6 - Made getSymbol() to throw an exception if "type" isn't a Symbol
-  void testGetSymbolBad() {
-    assertThrows(BadTypeException.class, () -> {
-      entry1.getSymbol();
-    });
-  }
-
-  @Test
-  // Test 7 - Made getSymbol() return Symbol.TIMES
-  void testGetSymbol() throws BadTypeException {
-    assertEquals(entry2.getSymbol(), Symbol.TIMES,
-        "The value returned should be the symbol of the entry");
-  }
-
-  @Test
   // Test 8 - Used a variable named "number" from constructor, returned this variable not 6.0f
   void testGetValueOfTwo() throws BadTypeException {
     assertEquals(entry1.getValue(), 6.0f, 0.001f);
@@ -106,14 +89,6 @@ class TestEntry {
   void testGetTypeOfTwo() {
     assertEquals(entry1.getType(), Type.NUMBER, "The type of this entry should be NUMBER");
     assertEquals(entry2.getType(), Type.SYMBOL, "The type of this entry sohuld be Symbol");
-  }
-
-  @Test
-  // Test 11 - Returned "symbol" instead of Symbol.times;
-  void testGetTwoSymbols() throws BadTypeException {
-    assertEquals(entry2.getSymbol(), Symbol.TIMES, "The symbol returned should be TIMES");
-    Entry entry = new Entry(Symbol.DIVIDE);
-    assertEquals(entry.getSymbol(), Symbol.DIVIDE, "The symbol returned should be DIVIDE");
   }
 
   @Test

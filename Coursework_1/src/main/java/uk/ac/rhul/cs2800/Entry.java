@@ -13,7 +13,6 @@ import java.util.Objects;
 public class Entry {
 
   private float number;
-  private Symbol symbol;
   private Type type;
   private String myString;
 
@@ -37,16 +36,6 @@ public class Entry {
   public Entry(String string) {
     this.myString = string;
     type = Type.STRING;
-  }
-
-  /**
-   * This is the constructor for any entry that contains a symbol.
-   *
-   * @param symbol is used in to initialise the symbol to be held in "symbol".
-   */
-  public Entry(Symbol symbol) {
-    this.symbol = symbol;
-    type = type.SYMBOL;
   }
 
   /**
@@ -85,22 +74,11 @@ public class Entry {
     return number;
   }
 
-  /**
-   * This method returns the symbol of an entry object.
-   *
-   * @return symbol which is the symbol associated to the entry object.
-   * @throws BadTypeException if the entry isn't associated to a symbol and contains anything else.
-   */
-  public Symbol getSymbol() throws BadTypeException {
-    if (type != Type.SYMBOL) {
-      throw new BadTypeException("Created other - asked for symbol");
-    }
-    return symbol;
-  }
+
 
   @Override
   public int hashCode() {
-    return Objects.hash(myString, number, symbol, type);
+    return Objects.hash(myString, number, type);
   }
 
   @Override
@@ -114,8 +92,7 @@ public class Entry {
     }
     Entry other = (Entry) obj;
     return Objects.equals(myString, other.myString)
-        && Float.floatToIntBits(number) == Float.floatToIntBits(other.number)
-        && symbol == other.symbol && type == other.type;
+        && Float.floatToIntBits(number) == Float.floatToIntBits(other.number) && type == other.type;
   }
 
 
