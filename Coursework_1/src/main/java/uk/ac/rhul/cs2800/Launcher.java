@@ -8,7 +8,6 @@
 package uk.ac.rhul.cs2800;
 
 import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -27,7 +26,7 @@ public class Launcher extends Application {
    * Used to pass information into main since JavaFX requires a specified signature for main the
    * method.
    */
-  private static ControllerInterface myController;
+  private static Controller myController;
 
 
   /**
@@ -55,9 +54,9 @@ public class Launcher extends Application {
   }
 
   /**
-   * The main method needed by JavaFX in the Application class.
+   * The main method needed by JavaFX in the Application class to run.
    *
-   * @param args the args passed into the true main method in Driver
+   *
    */
   public static void main(String[] args) {
     Application.launch();

@@ -2,21 +2,22 @@
 // Revision: $Revision: 184 $
 // Last modified: $Date: 2020-08-06 13:58:04 +0100 (Thu, 06 Aug 2020) $
 // Last modified by: $Author: dave $
+
 package uk.ac.rhul.cs2800;
 
 /**
- * The ways in a which a calculator may evaluate an arithmetic expression
- * 
+ * The ways in a which a calculator may evaluate an arithmetic expression.
+ *
  * @author dave
  *
  */
 public enum OpType {
   /**
-   * Normal order with operator between arguments like 5 * (3 + 2)
+   * Normal order with operator between arguments like 5 * (3 + 2).
    */
   INFIX,
   /**
-   * Reverse Polish like 325+*
+   * Reverse Polish like 325+*.
    */
   POSTFIX;
 }

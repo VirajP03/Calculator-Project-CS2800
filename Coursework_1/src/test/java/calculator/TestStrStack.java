@@ -6,7 +6,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uk.ac.rhul.cs2800.BadTypeException;
 import uk.ac.rhul.cs2800.StrStack;
-import uk.ac.rhul.cs2800.Symbol;
 
 class TestStrStack {
 

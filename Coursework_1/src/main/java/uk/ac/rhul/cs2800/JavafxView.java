@@ -2,8 +2,8 @@
 // https://svn.cs.rhul.ac.uk/personal/dave/CS2800Examples/MVC-separated/trunk/src/main/java/calculator/cs2800/JavafxView.java
 // $
 // Revision: $Revision: 184 $
-// Last modified: $Date: 2020-08-06 13:58:04 +0100 (Thu, 06 Aug 2020) $
-// Last modified by: $Author: dave $
+// Last modified: $Date: 2022-12-15
+// Last modified by: $Author: Viraj $
 
 package uk.ac.rhul.cs2800;
 
@@ -73,7 +73,6 @@ public class JavafxView implements ViewInterface {
   public void setAnswer(String a) {
     answer.setText(a);
   }
-  ///////////////////////////////////////////////////////////////////
 
   /**
    * The button the user presses once they have entered their expression.

@@ -8,7 +8,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uk.ac.rhul.cs2800.Entry;
 import uk.ac.rhul.cs2800.Stack;
-import uk.ac.rhul.cs2800.Symbol;
 
 /**
  * @author Viraj Patel (zkac174)
@@ -27,9 +26,7 @@ class TestStack {
   public void setup() {
     stack = new Stack();
     entry1 = new Entry(9.0f);
-    entry2 = new Entry(Symbol.PLUS);
     entry3 = new Entry(10.0f);
-    entry4 = new Entry(Symbol.TIMES);
   }
 
   @Test
@@ -122,10 +119,8 @@ class TestStack {
     stack.push(entry3);
     stack.push(entry4);
     Entry entry5 = new Entry(8.0f);
-    Entry entry6 = new Entry(Symbol.DIVIDE);
     stack.push(entry5);
-    stack.push(entry6);
-    assertEquals(stack.size(), 6, "The size of the stack should be 6");
+    assertEquals(stack.size(), 5, "The size of the stack should be 6");
   }
 
   @Test
